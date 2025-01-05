@@ -12,18 +12,17 @@ public class TopicPicker{
 
         subjects.put("Computer Science", List.of("Structure and function of the processor", "Types of processor", "Input, output and storage"));
 
-        // I am aware of this leak. Reasearching fix!!
-        Scanner input = new Scanner(System.in);
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.println("Enter subject: ");
+            String subjecString = input.nextLine();
+            System.out.println("You picked: " + subjecString);
 
-        System.out.println("Enter subject: ");
-        String subjecString = input.nextLine();
-        System.out.println("You picked: " + subjecString);
+            List<String> subtopics = subjects.get(subjecString);
 
-        List<String> subtopics = subjects.get(subjecString);
-
-        Random random = new Random();
-        String randomSubtopic = subtopics.get(random.nextInt(subtopics.size()));
-        System.out.println("Topic Picked: " + randomSubtopic);
+            Random random = new Random();
+            String randomSubtopic = subtopics.get(random.nextInt(subtopics.size()));
+            System.out.println("Topic Picked: " + randomSubtopic);
+        }
 
     }
 }
