@@ -9,7 +9,7 @@ public class TopicPicker{
         // Three hash maps for three subjects
         HashMap<String, List<String>> subjects = new HashMap<>();
 
-        subjects.put("OCR Computer Science", List.of(
+        subjects.put("Computer Science", List.of(
             "The characteristics of contemporary processors, input, output and storage devices",
             "Software and software development",
             "Exchanging data",
@@ -25,7 +25,7 @@ public class TopicPicker{
         ));
 
         // WJEC Electronics Subtopics
-        subjects.put("WJEC Electronics", List.of(
+        subjects.put("Electronics", List.of(
             "Basic electrical circuits",
             "Resistance and resistivity",
             "Capacitors",
@@ -71,7 +71,13 @@ public class TopicPicker{
 
         try (Scanner input = new Scanner(System.in)) {
             System.out.println("Enter subject: ");
-            String subjecString = input.nextLine();
+            List<String> subjectNames = new ArrayList<>(subjects.keySet());
+
+            for (int i = 0; i < subjectNames.size(); i++) {
+                System.out.println((i + 1) + ". " + subjectNames.get(i));
+        }
+            int subjectChoice = input.nextInt() - 1;
+            String subjecString = subjectNames.get(subjectChoice);
             System.out.println("You picked: " + subjecString);
 
             List<String> subtopics = subjects.get(subjecString);
