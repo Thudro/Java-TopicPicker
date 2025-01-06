@@ -9,8 +9,65 @@ public class TopicPicker{
         // Three hash maps for three subjects
         HashMap<String, List<String>> subjects = new HashMap<>();
 
+        subjects.put("OCR Computer Science", List.of(
+            "The characteristics of contemporary processors, input, output and storage devices",
+            "Software and software development",
+            "Exchanging data",
+            "Data types, data structures and algorithms",
+            "Legal, moral, cultural and ethical issues",
+            "Elements of computational thinking",
+            "Problem solving and programming",
+            "Algorithms",
+            "Analysis of the problem",
+            "Design of the solution",
+            "Developing the solution",
+            "Evaluation"
+        ));
 
-        subjects.put("Computer Science", List.of("Structure and function of the processor", "Types of processor", "Input, output and storage"));
+        // WJEC Electronics Subtopics
+        subjects.put("WJEC Electronics", List.of(
+            "Basic electrical circuits",
+            "Resistance and resistivity",
+            "Capacitors",
+            "Inductors",
+            "AC theory",
+            "Semiconductors",
+            "Diodes",
+            "Transistors",
+            "Operational amplifiers",
+            "Logic gates and combinational logic systems",
+            "Boolean algebra",
+            "Sequential logic systems",
+            "Microcontrollers",
+            "Communication systems",
+            "Power supplies",
+            "Amplifiers",
+            "Oscillators",
+            "Digital systems",
+            "Control systems",
+            "System design",
+            "System construction",
+            "System testing and evaluation"
+        ));
+
+        // Engineering Subtopics
+        subjects.put("Engineering", List.of(
+            "Mathematics for engineering",
+            "Science for engineering",
+            "Principles of mechanical engineering",
+            "Principles of electrical and electronic engineering",
+            "Health and safety in engineering",
+            "Mechanical operations",
+            "Electrical operations",
+            "Engineering design",
+            "Computer-aided design (CAD)",
+            "Manufacturing processes",
+            "Materials science",
+            "Business for engineering",
+            "Lean and quality",
+            "Project management"
+        ));
+
 
         try (Scanner input = new Scanner(System.in)) {
             System.out.println("Enter subject: ");
