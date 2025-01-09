@@ -24,7 +24,7 @@ public class TopicPicker{
             "Evaluation"
         ));
 
-        // WJEC Electronics Subtopics
+        // Electronics Subtopics
         subjects.put("Electronics", List.of(
             "Basic electrical circuits",
             "Resistance and resistivity",
@@ -70,12 +70,15 @@ public class TopicPicker{
 
 
         try (Scanner input = new Scanner(System.in)) {
-            System.out.println("Enter subject: ");
+            System.out.println("List Of Subjects: ");
+            System.out.println("----------------------------|");
             List<String> subjectNames = new ArrayList<>(subjects.keySet());
 
             for (int i = 0; i < subjectNames.size(); i++) {
                 System.out.println((i + 1) + ". " + subjectNames.get(i));
         }
+            System.out.println("----------------------------|");
+            System.out.println("Enter Subject Number: ");
             int subjectChoice = input.nextInt() - 1;
             String subjecString = subjectNames.get(subjectChoice);
             System.out.println("You picked: " + subjecString);
